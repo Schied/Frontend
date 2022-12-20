@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="login z-depth-3">
+    <div class="row">
+      <h4 class="login-header col s12">INICIO DE SESION</h4>
+    </div>
+    <form [formGroup]="frmLogin" class="login-container" (submit)="onLogin()">
+      <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="nick_usu" type="text" name="nick_usu" formControlName="nick_usu">
+        <label for="nick_usu">Usuario</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix" (click)="togglepass = !togglepass" style="cursor: pointer;">remove_red_eye</i>
+        <input id="contra_usu" [type]="togglepass ? 'text' : 'password'" name="contra_usu" formControlName="contra_usu">
+        <label for="contra_usu">Contraseña</label>
+      </div>
+    </div>
+    <div class="container-flex">
+      <div class="container-recuperar">
+        <a (click)="recUsuario()">¿Has olvidado tu usuario?</a>
+      </div>
+      <div class="container-recuperar">
+        <a (click)="recContra()">¿Has olvidado tu contraseña?</a>
+      </div>
+    </div>
+    <div class="input-field col s6 center-align">
+      <button class="waves-effect waves-light btn" [disabled]="frmLogin.invalid">Iniciar Sesion</button>
+    </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="left" style="cursor: pointer;"><i class="material-icons" (click)="back()">chevron_left</i></a>
+    <p class="flow-text center">RECUPERACIÓN</p>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="login z-depth-3">
+    <div class="row">
+      <h4 class="login-header col s12">ACTUALIZAR CONTRASEÑA</h4>
+    </div>
+    <form ngNativeValidate #frmActualizarContra="ngForm" class="login-container" (ngSubmit)="onActualizar(frmActualizarContra)">
+      <div class="row">
+      <div class="input-field col s12">
+        <input id="contra" type="text" name="contra" ngModel required>
+        <label for="contra">Contraseña</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="vcontra" type="text" name="vcontra" ngModel required>
+        <label for="vcontra">Confirmar contraseña</label>
+      </div>
+    </div>
+    <div class="input-field col s6 center-align">
+      <button type="submit" class="waves-effect waves-light btn">Actualizar</button>
+    </div>
+    </form>
+  </div>
+</div>

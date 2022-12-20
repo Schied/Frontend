@@ -1,0 +1,29 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="left" style="cursor: pointer;"><i class="material-icons" (click)="back()">chevron_left</i></a>
+    <p class="flow-text center">RECUPERACIÓN</p>
+  </div>
+</nav>
+<div class="container">
+  <div class="login z-depth-3">
+    <div class="row">
+      <h5 class="login-header col s12 center">Recuperar usuario</h5>
+    </div>
+    <div class="container-descp">
+      <p style="color: #FFFFFF;">Para recuperar el usuario ingrese su correo en el siguiente campo de texto, al dar clic en recuperar se le enviara el usuario vinculado al correo</p>
+    </div>
+    <br>
+    <form ngNativeValidate #frmRecuperarUsu="ngForm" class="login-container" (ngSubmit)="onRecuperarUsu(frmRecuperarUsu)">
+      <div class="row">
+      <div class="input-field col s12">
+        <input id="correo" type="email" name="correo" ngModel required>
+        <label for="correo">Correo</label>
+      </div>
+    </div>
+
+    <div class="input-field col s12 center-align">
+      <button type="submit" class="waves-effect waves-light btn">Recuperar</button>
+    </div>
+    </form>
+  </div>
+</div>

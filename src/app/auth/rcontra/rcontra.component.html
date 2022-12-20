@@ -1,0 +1,43 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="left" style="cursor: pointer;"><i class="material-icons" (click)="back()">chevron_left</i></a>
+    <p class="flow-text center">RECUPERACIÓN</p>
+  </div>
+</nav>
+<div class="container">
+  <div class="login z-depth-3">
+    <div class="row">
+      <h5 class="login-header col s12 center">Recuperar contraseña</h5>
+    </div>
+    <div class="container-descp" *ngIf="!codigo">
+      <p style="color: #FFFFFF;">Para recuperar la contraseña ingrese su correo en el siguiente campo de texto y de clic en obtener código</p>
+    </div>
+    <br>
+    <form ngNativeValidate #frmObtCodigo="ngForm" class="login-container" (ngSubmit)="onObtnCodigo(frmObtCodigo)" *ngIf="!codigo">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="correo" type="email" name="correo" ngModel required>
+          <label for="correo">Correo</label>
+        </div>
+      </div>
+      <div class="input-field col s12 center-align">
+        <button type="submit" class="waves-effect waves-light btn">Obtener código</button>
+      </div>
+    </form>
+    <div class="container-descp" *ngIf="codigo">
+      <p style="color: #FFFFFF;">Al correo se le ha enviado un código, el cual debe ingresar en el siguiente campo de texto</p>
+    </div>
+    <br>
+    <form ngNativeValidate #frmRecuperarContra="ngForm" class="login-container" (ngSubmit)="onRecuperarContra(frmRecuperarContra)" *ngIf="codigo">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="codigo" type="text" name="codigo" ngModel required>
+          <label for="codigo">Código</label>
+        </div>
+      </div>
+      <div class="input-field col s12 center-align">
+        <button type="submit" class="waves-effect waves-light btn">Confirmar</button>
+      </div>
+    </form>
+  </div>
+</div>
